@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Python</ID>
+  <OriginalElement>#D:/OC/Abdess/P8/cityscapesscripts/preparation/batchdatagenaug.py</OriginalElement>
+  <nodes>
+    <node x="-228.0" y="-160.0">cityscapesscripts.preparation.batchdatagenaug.BatchDataGenAug</node>
+    <node x="-75.5" y="204.0">Exception</node>
+    <node x="-228.0" y="283.0">cityscapesscripts.preparation.batchdatagenaug.DataError</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="cityscapesscripts.preparation.batchdatagenaug.DataError" target="Exception" relationship="REALIZATION">
+      <point x="0.0" y="-49.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.9203052140737601" showDependencies="false" x="941.5" y="111.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+</Diagram>
+

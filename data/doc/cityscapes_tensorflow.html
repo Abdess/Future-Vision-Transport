@@ -1,0 +1,1858 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>cityscapes_tensorflow API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>cityscapes_tensorflow</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">###
+# Pipeline de segmentation qui effectue
+# l’entrainement, l’évaluation, la prédiction,
+# la visualisation et la sauvegarde d&#39;un modèle 
+###
+
+from distutils.version import LooseVersion
+import tensorflow as tf
+import warnings
+from tqdm import trange
+import sys
+import os.path
+import scipy.misc
+import shutil
+from glob import glob
+from collections import deque
+import numpy as np
+import time
+
+from cityscapesscripts.helpers.tf_variable_summaries import add_variable_summaries
+from cityscapesscripts.helpers.visualization_utils import print_segmentation_onto_image, create_split_view
+
+
+class modelPipeline:
+
+    def __init__(self, model_load_dir=None, tags=None, vgg16_dir=None, num_classes=None, variables_load_dir=None):
+
+        assert LooseVersion(tf.__version__) &gt;= LooseVersion(
+            &#39;1.0&#39;), &#39;Ce programme nécessite TensorFlow version 1.0 ou plus récente. Vous utilisez {}&#39;.format(tf.__version__)
+        print(&#39;TensorFlow Version : {}&#39;.format(tf.__version__))
+
+        if (model_load_dir is None) and (vgg16_dir is None or num_classes is None):
+            raise ValueError(
+                &#34;Vous devez fournir soit `model_load_dir` et `tags` soit `vgg16_dir` et `num_classes`.&#34;)
+
+        self.variables_load_dir = variables_load_dir
+        self.model_load_dir = model_load_dir
+        self.tags = tags
+        self.vgg16_dir = vgg16_dir
+        self.vgg16_tag = &#39;vgg16&#39;
+        self.num_classes = num_classes
+
+        self.variables_updated = False  
+        self.eval_dataset = None
+
+
+        self.metric_names = []  
+        self.metric_values = []  
+        self.best_metric_values = []  
+        self.metric_value_tensors = []  
+        self.metric_update_ops = []  
+        self.training_loss = None
+        self.best_training_loss = 99999999.9
+
+        self.sess = tf.Session()
+        self.g_step = None 
+
+        if not model_load_dir is None:
+
+            tf.saved_model.loader.load(sess=self.sess, tags=self.tags, export_dir=self.model_load_dir)
+            graph = tf.get_default_graph()
+
+            self.image_input = graph.get_tensor_by_name(&#39;image_input:0&#39;)
+            self.keep_prob = graph.get_tensor_by_name(&#39;keep_prob:0&#39;)
+            self.fcn8s_output = graph.get_tensor_by_name(&#39;decoder/fcn8s_output:0&#39;)
+            self.l2_regularization_rate = graph.get_tensor_by_name(&#39;l2_regularization_rate:0&#39;)
+            self.labels = graph.get_tensor_by_name(&#39;labels_input:0&#39;)
+            self.total_loss = graph.get_tensor_by_name(&#39;optimizer/total_loss:0&#39;)
+            self.train_op = graph.get_tensor_by_name(&#39;optimizer/train_op:0&#39;)
+            self.learning_rate = graph.get_tensor_by_name(&#39;optimizer/learning_rate:0&#39;)
+            self.global_step = graph.get_tensor_by_name(&#39;optimizer/global_step:0&#39;)
+            self.softmax_output = graph.get_tensor_by_name(&#39;predictor/softmax_output:0&#39;)
+            self.predictions_argmax = graph.get_tensor_by_name(&#39;predictor/predictions_argmax:0&#39;)
+            self.mean_loss_value = graph.get_tensor_by_name(&#39;metrics/mean_loss_value:0&#39;)
+            self.mean_loss_update_op = graph.get_tensor_by_name(&#39;metrics/mean_loss_update_op:0&#39;)
+            self.mean_iou_value = graph.get_tensor_by_name(&#39;metrics/mean_iou_value:0&#39;)
+            self.mean_iou_update_op = graph.get_tensor_by_name(&#39;metrics/mean_iou_update_op:0&#39;)
+            self.acc_value = graph.get_tensor_by_name(&#39;metrics/acc_value:0&#39;)
+            self.acc_update_op = graph.get_tensor_by_name(&#39;metrics/acc_update_op:0&#39;)
+            self.metrics_reset_op = graph.get_operation_by_name(&#39;metrics/metrics_reset_op&#39;)
+            self.summaries_training = graph.get_tensor_by_name(&#39;summaries_training:0&#39;)
+            self.summaries_evaluation = graph.get_tensor_by_name(&#39;summaries_evaluation:0&#39;)
+
+            self.sess.run(self.metrics_reset_op)
+
+        else:
+
+
+            self.image_input, self.keep_prob, self.pool3_out, self.pool4_out, self.fc7_out = self._load_vgg16()
+
+            self.fcn8s_output, self.l2_regularization_rate = self._build_decoder()
+
+            self.labels = tf.placeholder(dtype=tf.int32, shape=[None, None, None, self.num_classes],
+                                         name=&#39;labels_input&#39;)
+            self.total_loss, self.train_op, self.learning_rate, self.global_step = self._build_optimizer()
+
+            self.softmax_output, self.predictions_argmax = self._build_predictor()
+
+            self.mean_loss_value, self.mean_loss_update_op, self.mean_iou_value, self.mean_iou_update_op, self.acc_value, self.acc_update_op, self.metrics_reset_op = self._build_metrics()
+
+            self.summaries_training, self.summaries_evaluation = self._build_summary_ops()
+  
+            self.sess.run(tf.global_variables_initializer())
+            self.sess.run(tf.local_variables_initializer())
+
+
+            if not variables_load_dir is None:
+                saver = tf.train.Saver()
+                saver.restore(self.sess, variables_load_dir)
+
+    def _load_vgg16(self):
+
+
+        tf.saved_model.loader.load(sess=self.sess, tags=[self.vgg16_tag], export_dir=self.vgg16_dir)
+
+
+
+        graph = tf.get_default_graph()
+
+        vgg16_image_input_tensor_name = &#39;image_input:0&#39;
+        vgg16_keep_prob_tensor_name = &#39;keep_prob:0&#39;
+        vgg16_pool3_out_tensor_name = &#39;layer3_out:0&#39;
+        vgg16_pool4_out_tensor_name = &#39;layer4_out:0&#39;
+        vgg16_fc7_out_tensor_name = &#39;layer7_out:0&#39;
+
+        image_input = graph.get_tensor_by_name(vgg16_image_input_tensor_name)
+        keep_prob = graph.get_tensor_by_name(vgg16_keep_prob_tensor_name)
+        pool3_out = graph.get_tensor_by_name(vgg16_pool3_out_tensor_name)
+        pool4_out = graph.get_tensor_by_name(vgg16_pool4_out_tensor_name)
+        fc7_out = graph.get_tensor_by_name(vgg16_fc7_out_tensor_name)
+
+        return image_input, keep_prob, pool3_out, pool4_out, fc7_out
+
+    def _build_decoder(self):
+
+        stddev_1x1 = 0.001 
+        stddev_conv2d_trans = 0.01 
+
+        l2_regularization_rate = tf.placeholder(dtype=tf.float32, shape=[],
+                                                name=&#39;l2_regularization_rate&#39;)  
+
+        with tf.name_scope(&#39;decoder&#39;):
+
+
+            pool3_out_scaled = tf.multiply(self.pool3_out, 0.0001, name=&#39;pool3_out_scaled&#39;)
+
+            pool3_1x1 = tf.layers.conv2d(inputs=pool3_out_scaled,
+                                         filters=self.num_classes,
+                                         kernel_size=(1, 1),
+                                         strides=(1, 1),
+                                         padding=&#39;same&#39;,
+                                         kernel_initializer=tf.truncated_normal_initializer(stddev=stddev_1x1),
+                                         kernel_regularizer=tf.contrib.layers.l2_regularizer(l2_regularization_rate),
+                                         name=&#39;pool3_1x1&#39;)
+
+            pool4_out_scaled = tf.multiply(self.pool4_out, 0.01, name=&#39;pool4_out_scaled&#39;)
+
+            pool4_1x1 = tf.layers.conv2d(inputs=pool4_out_scaled,
+                                         filters=self.num_classes,
+                                         kernel_size=(1, 1),
+                                         strides=(1, 1),
+                                         padding=&#39;same&#39;,
+                                         kernel_initializer=tf.truncated_normal_initializer(stddev=stddev_1x1),
+                                         kernel_regularizer=tf.contrib.layers.l2_regularizer(l2_regularization_rate),
+                                         name=&#39;pool4_1x1&#39;)
+
+            fc7_1x1 = tf.layers.conv2d(inputs=self.fc7_out,
+                                       filters=self.num_classes,
+                                       kernel_size=(1, 1),
+                                       strides=(1, 1),
+                                       padding=&#39;same&#39;,
+                                       kernel_initializer=tf.truncated_normal_initializer(stddev=stddev_1x1),
+                                       kernel_regularizer=tf.contrib.layers.l2_regularizer(l2_regularization_rate),
+                                       name=&#39;fc7_1x1&#39;)
+
+
+            fc7_conv2d_trans = tf.layers.conv2d_transpose(inputs=fc7_1x1,
+                                                          filters=self.num_classes,
+                                                          kernel_size=(4, 4),
+                                                          strides=(2, 2),
+                                                          padding=&#39;same&#39;,
+                                                          kernel_initializer=tf.truncated_normal_initializer(
+                                                              stddev=stddev_conv2d_trans),
+                                                          kernel_regularizer=tf.contrib.layers.l2_regularizer(
+                                                              l2_regularization_rate),
+                                                          name=&#39;fc7_conv2d_trans&#39;)
+
+            add_fc7_pool4 = tf.add(fc7_conv2d_trans, pool4_1x1, name=&#39;add_fc7_pool4&#39;)
+
+            fc7_pool4_conv2d_trans = tf.layers.conv2d_transpose(inputs=add_fc7_pool4,
+                                                                filters=self.num_classes,
+                                                                kernel_size=(4, 4),
+                                                                strides=(2, 2),
+                                                                padding=&#39;same&#39;,
+                                                                kernel_initializer=tf.truncated_normal_initializer(
+                                                                    stddev=stddev_conv2d_trans),
+                                                                kernel_regularizer=tf.contrib.layers.l2_regularizer(
+                                                                    l2_regularization_rate),
+                                                                name=&#39;fc7_pool4_conv2d_trans&#39;)
+
+            add_fc7_pool4_pool3 = tf.add(fc7_pool4_conv2d_trans, pool3_1x1, name=&#39;add_fc7_pool4_pool3&#39;)
+
+            fc7_pool4_pool3_conv2d_trans = tf.layers.conv2d_transpose(inputs=add_fc7_pool4_pool3,
+                                                                      filters=self.num_classes,
+                                                                      kernel_size=(16, 16),
+                                                                      strides=(8, 8),
+                                                                      padding=&#39;same&#39;,
+                                                                      kernel_initializer=tf.truncated_normal_initializer(
+                                                                          stddev=stddev_conv2d_trans),
+                                                                      kernel_regularizer=tf.contrib.layers.l2_regularizer(
+                                                                          l2_regularization_rate),
+                                                                      name=&#39;fc7_pool4_pool3_conv2d_trans&#39;)
+
+            fcn8s_output = tf.identity(fc7_pool4_pool3_conv2d_trans, name=&#39;fcn8s_output&#39;)
+
+        return fc7_pool4_pool3_conv2d_trans, l2_regularization_rate
+
+    def _build_optimizer(self):
+
+
+        with tf.name_scope(&#39;optimizer&#39;):
+
+            global_step = tf.Variable(0, trainable=False, name=&#39;global_step&#39;)
+
+            learning_rate = tf.placeholder(dtype=tf.float32, shape=[], name=&#39;learning_rate&#39;)
+
+            regularization_losses = tf.get_collection(
+                tf.GraphKeys.REGULARIZATION_LOSSES)  
+            regularization_loss = tf.add_n(regularization_losses, name=&#39;regularization_loss&#39;) 
+
+            approximation_loss = tf.reduce_mean(
+                tf.nn.softmax_cross_entropy_with_logits(labels=self.labels, logits=self.fcn8s_output),
+                name=&#39;approximation_loss&#39;)
+            total_loss = tf.add(approximation_loss, regularization_loss, name=&#39;total_loss&#39;)
+
+            optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate, name=&#39;adam_optimizer&#39;)
+            train_op = optimizer.minimize(total_loss, global_step=global_step, name=&#39;train_op&#39;)
+
+        return total_loss, train_op, learning_rate, global_step
+
+    def _build_predictor(self):
+
+
+        with tf.name_scope(&#39;predictor&#39;):
+            softmax_output = tf.nn.softmax(self.fcn8s_output, name=&#39;softmax_output&#39;)
+            predictions_argmax = tf.argmax(softmax_output, axis=-1, name=&#39;predictions_argmax&#39;, output_type=tf.int64)
+
+        return softmax_output, predictions_argmax
+
+    def _build_metrics(self):
+
+
+        with tf.variable_scope(&#39;metrics&#39;) as scope:
+            labels_argmax = tf.argmax(self.labels, axis=-1, name=&#39;labels_argmax&#39;, output_type=tf.int64)
+
+
+            mean_loss_value, mean_loss_update_op = tf.metrics.mean(self.total_loss)
+
+            mean_loss_value = tf.identity(mean_loss_value, name=&#39;mean_loss_value&#39;)
+            mean_loss_update_op = tf.identity(mean_loss_update_op, name=&#39;mean_loss_update_op&#39;)
+
+
+            mean_iou_value, mean_iou_update_op = tf.metrics.mean_iou(labels=labels_argmax,
+                                                                     predictions=self.predictions_argmax,
+                                                                     num_classes=self.num_classes)
+
+            mean_iou_value = tf.identity(mean_iou_value, name=&#39;mean_iou_value&#39;)
+            mean_iou_update_op = tf.identity(mean_iou_update_op, name=&#39;mean_iou_update_op&#39;)
+
+
+            acc_value, acc_update_op = tf.metrics.accuracy(labels=labels_argmax,
+                                                           predictions=self.predictions_argmax)
+
+            acc_value = tf.identity(acc_value, name=&#39;acc_value&#39;)
+            acc_update_op = tf.identity(acc_update_op, name=&#39;acc_update_op&#39;)
+
+            local_metric_vars = tf.contrib.framework.get_variables(scope=scope, collection=tf.GraphKeys.LOCAL_VARIABLES)
+            metrics_reset_op = tf.variables_initializer(var_list=local_metric_vars, name=&#39;metrics_reset_op&#39;)
+
+        return (mean_loss_value,
+                mean_loss_update_op,
+                mean_iou_value,
+                mean_iou_update_op,
+                acc_value,
+                acc_update_op,
+                metrics_reset_op)
+
+    def _build_summary_ops(self):
+        graph = tf.get_default_graph()
+
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;pool3_1x1/kernel:0&#39;), scope=&#39;pool3_1x1/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;pool3_1x1/bias:0&#39;), scope=&#39;pool3_1x1/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;pool4_1x1/kernel:0&#39;), scope=&#39;pool4_1x1/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;pool4_1x1/bias:0&#39;), scope=&#39;pool4_1x1/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_1x1/kernel:0&#39;), scope=&#39;fc7_1x1/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_1x1/bias:0&#39;), scope=&#39;fc7_1x1/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_conv2d_trans/kernel:0&#39;),
+                               scope=&#39;fc7_conv2d_trans/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_conv2d_trans/bias:0&#39;),
+                               scope=&#39;fc7_conv2d_trans/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_pool4_conv2d_trans/kernel:0&#39;),
+                               scope=&#39;fc7_pool4_conv2d_trans/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_pool4_conv2d_trans/bias:0&#39;),
+                               scope=&#39;fc7_pool4_conv2d_trans/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_pool4_pool3_conv2d_trans/kernel:0&#39;),
+                               scope=&#39;fc7_pool4_pool3_conv2d_trans/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_pool4_pool3_conv2d_trans/bias:0&#39;),
+                               scope=&#39;fc7_pool4_pool3_conv2d_trans/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7/weights:0&#39;), scope=&#39;fc7/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7/biases:0&#39;), scope=&#39;fc7/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc6/weights:0&#39;), scope=&#39;fc6/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc6/biases:0&#39;), scope=&#39;fc6/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;conv4_3/filter:0&#39;), scope=&#39;conv4_3/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;conv4_3/biases:0&#39;), scope=&#39;conv4_3/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;conv3_3/filter:0&#39;), scope=&#39;conv3_3/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;conv3_3/biases:0&#39;), scope=&#39;conv3_3/bias&#39;)
+
+        tf.summary.scalar(&#39;total_loss&#39;, self.total_loss)
+        tf.summary.scalar(&#39;learning_rate&#39;, self.learning_rate)
+
+        summaries_training = tf.summary.merge_all()
+        summaries_training = tf.identity(summaries_training, name=&#39;summaries_training&#39;)
+
+        mean_loss = tf.summary.scalar(&#39;mean_loss&#39;, self.mean_loss_value)
+        mean_iou = tf.summary.scalar(&#39;mean_iou&#39;, self.mean_iou_value)
+        accuracy = tf.summary.scalar(&#39;accuracy&#39;, self.acc_value)
+
+        summaries_evaluation = tf.summary.merge(inputs=[mean_loss,
+                                                        mean_iou,
+                                                        accuracy])
+        summaries_evaluation = tf.identity(summaries_evaluation, name=&#39;summaries_evaluation&#39;)
+
+        return summaries_training, summaries_evaluation
+
+    def _initialize_metrics(self, metrics):
+
+        self.metric_names = []
+        self.best_metric_values = []
+        self.metric_update_ops = []
+        self.metric_value_tensors = []
+
+        if &#39;loss&#39; in metrics:
+            self.metric_names.append(&#39;loss&#39;)
+            self.best_metric_values.append(99999999.9)
+            self.metric_update_ops.append(self.mean_loss_update_op)
+            self.metric_value_tensors.append(self.mean_loss_value)
+        if &#39;mean_iou&#39; in metrics:
+            self.metric_names.append(&#39;mean_iou&#39;)
+            self.best_metric_values.append(0.0)
+            self.metric_update_ops.append(self.mean_iou_update_op)
+            self.metric_value_tensors.append(self.mean_iou_value)
+        if &#39;accuracy&#39; in metrics:
+            self.metric_names.append(&#39;accuracy&#39;)
+            self.best_metric_values.append(0.0)
+            self.metric_update_ops.append(self.acc_update_op)
+            self.metric_value_tensors.append(self.acc_value)
+
+    def train(self,
+              train_generator,
+              epochs,
+              steps_per_epoch,
+              learning_rate_schedule,
+              keep_prob=0.5,
+              l2_regularization=0.0,
+              eval_dataset=&#39;train&#39;,
+              eval_frequency=5,
+              val_generator=None,
+              val_steps=None,
+              metrics={},
+              save_during_training=False,
+              save_dir=None,
+              save_best_only=True,
+              save_tags=[&#39;default&#39;],
+              save_name=&#39;&#39;,
+              save_frequency=5,
+              saver=&#39;saved_model&#39;,
+              monitor=&#39;loss&#39;,
+              record_summaries=True,
+              summaries_frequency=10,
+              summaries_dir=None,
+              summaries_name=None,
+              training_loss_display_averaging=3):
+     
+        if not tf.test.gpu_device_name():
+            warnings.warn(&#39;Aucun GPU trouvé. Veuillez noter que l\&#39;entraînement de ce réseau sera insupportablement lent sans GPU.&#39;)
+        else:
+            print(&#39;Périphérique GPU par défaut : {}&#39;.format(tf.test.gpu_device_name()))
+
+        if not eval_dataset in [&#39;train&#39;, &#39;val&#39;]:
+            raise ValueError(&#34;`eval_dataset` doit être l&#39;un de &#39;train&#39; ou &#39;val&#39;, mais est &#39;{}&#39;.&#34;.format(eval_dataset))
+
+        if (eval_dataset == &#39;val&#39;) and ((val_generator is None) or (val_steps is None)):
+            raise ValueError(&#34;Lorsque eval_dataset == &#39;val&#39;, un `val_generator` et `val_steps` doivent être passés.&#34;)
+
+        for metric in metrics:
+            if not metric in [&#39;loss&#39;, &#39;mean_iou&#39;, &#39;accuracy&#39;]:
+                raise ValueError(
+                    &#34;{} n&#39;est pas une métrique valide. Les métriques valides sont [&#39;loss&#39;, mean_iou&#39;, &#39;accuracy&#39;].&#34;.format(metric))
+
+        if (not monitor in metrics) and (not monitor == &#39;loss&#39;):
+            raise ValueError(
+                &#39;Vous essayez de surveiller {}, mais elle n\&#39;est pas dans &#34;metrics&#34; et n\&#39;est donc pas calculée.&#39;.format(
+                    monitor))
+
+        self.eval_dataset = eval_dataset
+
+        self.g_step = self.sess.run(self.global_step)
+        learning_rate = learning_rate_schedule(self.g_step)
+
+        self._initialize_metrics(metrics)
+
+        if record_summaries:
+            training_writer = tf.summary.FileWriter(logdir=os.path.join(summaries_dir, summaries_name),
+                                                    graph=self.sess.graph)
+            if len(metrics) &gt; 0:
+                evaluation_writer = tf.summary.FileWriter(logdir=os.path.join(summaries_dir, summaries_name + &#39;_eval&#39;))
+
+        for epoch in range(1, epochs + 1):
+
+            loss_history = deque(maxlen=training_loss_display_averaging)
+
+            tr = trange(steps_per_epoch, file=sys.stdout)
+            tr.set_description(&#39;Epoch {}/{}&#39;.format(epoch, epochs))
+
+            for train_step in tr:
+
+                batch_images, batch_labels = next(train_generator)
+
+                if record_summaries and (self.g_step % summaries_frequency == 0):
+                    _, current_loss, self.g_step, training_summary = self.sess.run([self.train_op,
+                                                                                    self.total_loss,
+                                                                                    self.global_step,
+                                                                                    self.summaries_training],
+                                                                                   feed_dict={
+                                                                                       self.image_input: batch_images,
+                                                                                       self.labels: batch_labels,
+                                                                                       self.learning_rate: learning_rate,
+                                                                                       self.keep_prob: keep_prob,
+                                                                                       self.l2_regularization_rate: l2_regularization})
+                    training_writer.add_summary(summary=training_summary, global_step=self.g_step)
+                else:
+                    _, current_loss, self.g_step = self.sess.run([self.train_op,
+                                                                  self.total_loss,
+                                                                  self.global_step],
+                                                                 feed_dict={self.image_input: batch_images,
+                                                                            self.labels: batch_labels,
+                                                                            self.learning_rate: learning_rate,
+                                                                            self.keep_prob: keep_prob,
+                                                                            self.l2_regularization_rate: l2_regularization})
+
+                self.variables_updated = True
+
+                loss_history.append(current_loss)
+                losses = np.array(loss_history)
+                self.training_loss = np.mean(losses)
+
+                tr.set_postfix(ordered_dict={&#39;loss&#39;: self.training_loss,
+                                             &#39;learning rate&#39;: learning_rate})
+
+                learning_rate = learning_rate_schedule(self.g_step)
+
+            if (len(metrics) &gt; 0) and (epoch % eval_frequency == 0):
+
+                if eval_dataset == &#39;train&#39;:
+                    data_generator = train_generator
+                    num_batches = steps_per_epoch
+                    description = &#39;Évaluation sur le jeu de données de formation&#39;
+                elif eval_dataset == &#39;val&#39;:
+                    data_generator = val_generator
+                    num_batches = val_steps
+                    description = &#39;Évaluation sur le jeu de données de validation&#39;
+
+                self._evaluate(data_generator=data_generator,
+                               metrics=metrics,
+                               num_batches=num_batches,
+                               l2_regularization=l2_regularization,
+                               description=description)
+
+                if record_summaries:
+                    evaluation_summary = self.sess.run(self.summaries_evaluation)
+                    evaluation_writer.add_summary(summary=evaluation_summary, global_step=self.g_step)
+
+            if save_during_training and (epoch % save_frequency == 0):
+
+                save = False
+                if save_best_only:
+                    if (monitor == &#39;loss&#39; and
+                            (not &#39;loss&#39; in self.metric_names) and
+                            self.training_loss &lt; self.best_training_loss):
+                        save = True
+                    else:
+                        i = self.metric_names.index(monitor)
+                        if (monitor == &#39;loss&#39;) and (self.metric_values[i] &lt; self.best_metric_values[i]):
+                            save = True
+                        elif (monitor in [&#39;accuracry&#39;, &#39;mean_iou&#39;]) and (
+                                self.metric_values[i] &gt; self.best_metric_values[i]):
+                            save = True
+                    if save:
+                        print(&#39;Nouvelle meilleure {} valeur, modèle de sauvegarde.&#39;.format(monitor))
+                    else:
+                        print(&#39;Pas d\&#39;amélioration par rapport à la meilleure valeur {} précédente, pas de sauvegarde du modèle.&#39;.format(monitor))
+                else:
+                    save = True
+
+                if save:
+                    self.save(model_save_dir=save_dir,
+                              saver=saver,
+                              tags=save_tags,
+                              name=save_name,
+                              include_global_step=True,
+                              include_last_training_loss=True,
+                              include_metrics=(len(self.metric_names) &gt; 0))
+
+            if self.training_loss &lt; self.best_training_loss:
+                self.best_training_loss = self.training_loss
+
+            if epoch % eval_frequency == 0:
+
+                for i, metric_name in enumerate(self.metric_names):
+                    if (metric_name == &#39;loss&#39;) and (self.metric_values[i] &lt; self.best_metric_values[i]):
+                        self.best_metric_values[i] = self.metric_values[i]
+                    elif (metric_name in [&#39;accuracry&#39;, &#39;mean_iou&#39;]) and (
+                            self.metric_values[i] &gt; self.best_metric_values[i]):
+                        self.best_metric_values[i] = self.metric_values[i]
+
+    def _evaluate(self, data_generator, metrics, num_batches, l2_regularization, description=&#39;Evaluation&#39;):
+
+        self.sess.run(self.metrics_reset_op)
+
+        tr = trange(num_batches, file=sys.stdout)
+        tr.set_description(description)
+
+        for step in tr:
+            batch_images, batch_labels = next(data_generator)
+
+            self.sess.run(self.metric_update_ops,
+                          feed_dict={self.image_input: batch_images,
+                                     self.labels: batch_labels,
+                                     self.keep_prob: 1.0,
+                                     self.l2_regularization_rate: l2_regularization})
+
+        self.metric_values = self.sess.run(self.metric_value_tensors)
+
+        evaluation_results_string = &#39;&#39;
+        for i, metric_name in enumerate(self.metric_names):
+            evaluation_results_string += metric_name + &#39;: {:.4f}  &#39;.format(self.metric_values[i])
+        print(evaluation_results_string)
+
+    def evaluate(self, data_generator, num_batches, metrics={&#39;loss&#39;, &#39;mean_iou&#39;, &#39;accuracy&#39;}, l2_regularization=0.0,
+                 dataset=&#39;val&#39;):
+
+
+        for metric in metrics:
+            if not metric in [&#39;loss&#39;, &#39;mean_iou&#39;, &#39;accuracy&#39;]:
+                raise ValueError(
+                    &#34;{} n&#39;est pas une métrique valide. Les métriques valides sont [&#39;loss&#39;, mean_iou&#39;, &#39;accuracy&#39;].&#34;.format(metric))
+
+        if not dataset in {&#39;train&#39;, &#39;val&#39;}:
+            raise ValueError(&#34;`dataset` doit être soit &#39;train&#39; soit &#39;val&#39;..&#34;)
+
+        self._initialize_metrics(metrics)
+
+        self._evaluate(data_generator, metrics, num_batches, l2_regularization, description=&#39;Evaluation&#39;)
+
+        if dataset == &#39;val&#39;:
+            self.eval_dataset = &#39;val&#39;
+        else:
+            self.eval_dataset = &#39;train&#39;
+
+    def predict(self, images, argmax=True):
+
+        if argmax:
+            return self.sess.run(self.predictions_argmax,
+                                 feed_dict={self.image_input: images,
+                                            self.keep_prob: 1.0})
+        else:
+            return self.sess.run(self.softmax_output,
+                                 feed_dict={self.image_input: images,
+                                            self.keep_prob: 1.0})
+
+    def predict_and_save(self,
+                         results_dir,
+                         images_dir,
+                         color_map,
+                         resize=False,
+                         image_file_extension=&#39;png&#39;,
+                         include_unprocessed_image=False,
+                         arrangement=&#39;vertical&#39;,
+                         overwrite_existing=True):
+
+        if overwrite_existing and os.path.exists(results_dir):
+            shutil.rmtree(results_dir)
+        os.makedirs(results_dir)
+
+        image_paths = glob(os.path.join(images_dir, &#39;*.&#39; + image_file_extension))
+        num_images = len(image_paths)
+
+        print(&#39;Les images segmentées seront enregistrées dans &#34;{}&#34;.&#39;.format(results_dir))
+
+        tr = trange(num_images, file=sys.stdout)
+        tr.set_description(&#39;Traitement des images&#39;)
+
+        for i in tr:
+
+            filepath = image_paths[i]
+
+            image = scipy.misc.imread(filepath)
+            if resize and not np.array_equal(image.shape[:2], resize):
+                image = scipy.misc.imresize(image, resize)
+            img_height, img_width, img_ch = image.shape
+
+            prediction = self.predict([image], argmax=False)
+            processed_image = np.asarray(
+                print_segmentation_onto_image(image=image, prediction=prediction, color_map=color_map), dtype=np.uint8)
+
+            if include_unprocessed_image:
+                if arrangement == &#39;vertical&#39;:
+                    output_width = img_width
+                    output_height = 2 * img_height
+                    processed_image = create_split_view(target_size=(output_height, output_width),
+                                                        images=[processed_image, image],
+                                                        positions=[(0, 0), (img_height, 0)],
+                                                        sizes=[(img_height, img_width), (img_height, img_width)])
+                else:
+                    output_width = 2 * img_width
+                    output_height = img_height
+                    processed_image = create_split_view(target_size=(output_height, output_width),
+                                                        images=[processed_image, image],
+                                                        positions=[(0, 0), (0, img_width)],
+                                                        sizes=[(img_height, img_width), (img_height, img_width)])
+
+            scipy.misc.imsave(os.path.join(results_dir, os.path.basename(filepath)), processed_image)
+
+    def save(self,
+             model_save_dir,
+             saver,
+             tags=[&#39;default&#39;],
+             name=None,
+             include_global_step=True,
+             include_last_training_loss=True,
+             include_metrics=True,
+             force_save=False):
+
+        if (not self.variables_updated) and (not force_save):
+            print(&#34;Abandon : Rien à sauvegarder, aucune formation n&#39;a été effectuée depuis la dernière sauvegarde du modèle.&#34;)
+            return
+
+        if not saver in {&#39;saved_model&#39;, &#39;train_saver&#39;}:
+            raise ValueError(
+                &#34;Valeur inattendue pour `saver` : Peut être soit &#39;saved_model&#39; soit &#39;train_saver&#39;, mais a reçu &#39;{}&#39;.&#34;.format(
+                    saver))
+
+        if self.training_loss is None:
+            include_last_training_loss = False
+
+        model_name = &#39;saved_model&#39;
+        if not name is None:
+            model_name += &#39;_&#39; + name
+        if include_global_step:
+            self.g_step = self.sess.run(self.global_step)
+            model_name += &#39;_(globalstep-{})&#39;.format(self.g_step)
+        if include_last_training_loss:
+            model_name += &#39;_(trainloss-{:.4f})&#39;.format(self.training_loss)
+        if include_metrics:
+            if self.eval_dataset == &#39;val&#39;:
+                model_name += &#39;_(eval_on_val_dataset)&#39;
+            else:
+                model_name += &#39;_(eval_on_train_dataset)&#39;
+            for i in range(len(self.metric_names)):
+                try:
+                    model_name += &#39;_({}-{:.4f})&#39;.format(self.metric_names[i], self.metric_values[i])
+                except IndexError:
+                    model_name += &#39;_{}&#39;.format(time.time())
+        if not (include_global_step or include_last_training_loss or include_metrics) and (name is None):
+            model_name += &#39;_{}&#39;.format(time.time())
+
+        if saver == &#39;saved_model&#39;:
+            saved_model_builder = tf.saved_model.builder.SavedModelBuilder(os.path.join(model_save_dir, model_name))
+            saved_model_builder.add_meta_graph_and_variables(sess=self.sess, tags=tags)
+            saved_model_builder.save()
+        else:
+            saver = tf.train.Saver(var_list=None,
+                                   reshape=False,
+                                   max_to_keep=5,
+                                   keep_checkpoint_every_n_hours=10000.0)
+            saver.save(self.sess,
+                       save_path=os.path.join(model_save_dir, model_name, &#39;variables&#39;),
+                       write_meta_graph=True,
+                       write_state=True)
+
+        self.variables_updated = False
+
+    def load_variables(self, path):
+
+        saver = tf.train.Saver(var_list=None)
+        saver.restore(self.sess, path)
+
+    def close(self):
+
+        self.sess.close()
+        print(&#34;La session a été clôturée.&#34;)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="cityscapes_tensorflow.modelPipeline"><code class="flex name class">
+<span>class <span class="ident">modelPipeline</span></span>
+<span>(</span><span>model_load_dir=None, tags=None, vgg16_dir=None, num_classes=None, variables_load_dir=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class modelPipeline:
+
+    def __init__(self, model_load_dir=None, tags=None, vgg16_dir=None, num_classes=None, variables_load_dir=None):
+
+        assert LooseVersion(tf.__version__) &gt;= LooseVersion(
+            &#39;1.0&#39;), &#39;Ce programme nécessite TensorFlow version 1.0 ou plus récente. Vous utilisez {}&#39;.format(tf.__version__)
+        print(&#39;TensorFlow Version : {}&#39;.format(tf.__version__))
+
+        if (model_load_dir is None) and (vgg16_dir is None or num_classes is None):
+            raise ValueError(
+                &#34;Vous devez fournir soit `model_load_dir` et `tags` soit `vgg16_dir` et `num_classes`.&#34;)
+
+        self.variables_load_dir = variables_load_dir
+        self.model_load_dir = model_load_dir
+        self.tags = tags
+        self.vgg16_dir = vgg16_dir
+        self.vgg16_tag = &#39;vgg16&#39;
+        self.num_classes = num_classes
+
+        self.variables_updated = False  
+        self.eval_dataset = None
+
+
+        self.metric_names = []  
+        self.metric_values = []  
+        self.best_metric_values = []  
+        self.metric_value_tensors = []  
+        self.metric_update_ops = []  
+        self.training_loss = None
+        self.best_training_loss = 99999999.9
+
+        self.sess = tf.Session()
+        self.g_step = None 
+
+        if not model_load_dir is None:
+
+            tf.saved_model.loader.load(sess=self.sess, tags=self.tags, export_dir=self.model_load_dir)
+            graph = tf.get_default_graph()
+
+            self.image_input = graph.get_tensor_by_name(&#39;image_input:0&#39;)
+            self.keep_prob = graph.get_tensor_by_name(&#39;keep_prob:0&#39;)
+            self.fcn8s_output = graph.get_tensor_by_name(&#39;decoder/fcn8s_output:0&#39;)
+            self.l2_regularization_rate = graph.get_tensor_by_name(&#39;l2_regularization_rate:0&#39;)
+            self.labels = graph.get_tensor_by_name(&#39;labels_input:0&#39;)
+            self.total_loss = graph.get_tensor_by_name(&#39;optimizer/total_loss:0&#39;)
+            self.train_op = graph.get_tensor_by_name(&#39;optimizer/train_op:0&#39;)
+            self.learning_rate = graph.get_tensor_by_name(&#39;optimizer/learning_rate:0&#39;)
+            self.global_step = graph.get_tensor_by_name(&#39;optimizer/global_step:0&#39;)
+            self.softmax_output = graph.get_tensor_by_name(&#39;predictor/softmax_output:0&#39;)
+            self.predictions_argmax = graph.get_tensor_by_name(&#39;predictor/predictions_argmax:0&#39;)
+            self.mean_loss_value = graph.get_tensor_by_name(&#39;metrics/mean_loss_value:0&#39;)
+            self.mean_loss_update_op = graph.get_tensor_by_name(&#39;metrics/mean_loss_update_op:0&#39;)
+            self.mean_iou_value = graph.get_tensor_by_name(&#39;metrics/mean_iou_value:0&#39;)
+            self.mean_iou_update_op = graph.get_tensor_by_name(&#39;metrics/mean_iou_update_op:0&#39;)
+            self.acc_value = graph.get_tensor_by_name(&#39;metrics/acc_value:0&#39;)
+            self.acc_update_op = graph.get_tensor_by_name(&#39;metrics/acc_update_op:0&#39;)
+            self.metrics_reset_op = graph.get_operation_by_name(&#39;metrics/metrics_reset_op&#39;)
+            self.summaries_training = graph.get_tensor_by_name(&#39;summaries_training:0&#39;)
+            self.summaries_evaluation = graph.get_tensor_by_name(&#39;summaries_evaluation:0&#39;)
+
+            self.sess.run(self.metrics_reset_op)
+
+        else:
+
+
+            self.image_input, self.keep_prob, self.pool3_out, self.pool4_out, self.fc7_out = self._load_vgg16()
+
+            self.fcn8s_output, self.l2_regularization_rate = self._build_decoder()
+
+            self.labels = tf.placeholder(dtype=tf.int32, shape=[None, None, None, self.num_classes],
+                                         name=&#39;labels_input&#39;)
+            self.total_loss, self.train_op, self.learning_rate, self.global_step = self._build_optimizer()
+
+            self.softmax_output, self.predictions_argmax = self._build_predictor()
+
+            self.mean_loss_value, self.mean_loss_update_op, self.mean_iou_value, self.mean_iou_update_op, self.acc_value, self.acc_update_op, self.metrics_reset_op = self._build_metrics()
+
+            self.summaries_training, self.summaries_evaluation = self._build_summary_ops()
+  
+            self.sess.run(tf.global_variables_initializer())
+            self.sess.run(tf.local_variables_initializer())
+
+
+            if not variables_load_dir is None:
+                saver = tf.train.Saver()
+                saver.restore(self.sess, variables_load_dir)
+
+    def _load_vgg16(self):
+
+
+        tf.saved_model.loader.load(sess=self.sess, tags=[self.vgg16_tag], export_dir=self.vgg16_dir)
+
+
+
+        graph = tf.get_default_graph()
+
+        vgg16_image_input_tensor_name = &#39;image_input:0&#39;
+        vgg16_keep_prob_tensor_name = &#39;keep_prob:0&#39;
+        vgg16_pool3_out_tensor_name = &#39;layer3_out:0&#39;
+        vgg16_pool4_out_tensor_name = &#39;layer4_out:0&#39;
+        vgg16_fc7_out_tensor_name = &#39;layer7_out:0&#39;
+
+        image_input = graph.get_tensor_by_name(vgg16_image_input_tensor_name)
+        keep_prob = graph.get_tensor_by_name(vgg16_keep_prob_tensor_name)
+        pool3_out = graph.get_tensor_by_name(vgg16_pool3_out_tensor_name)
+        pool4_out = graph.get_tensor_by_name(vgg16_pool4_out_tensor_name)
+        fc7_out = graph.get_tensor_by_name(vgg16_fc7_out_tensor_name)
+
+        return image_input, keep_prob, pool3_out, pool4_out, fc7_out
+
+    def _build_decoder(self):
+
+        stddev_1x1 = 0.001 
+        stddev_conv2d_trans = 0.01 
+
+        l2_regularization_rate = tf.placeholder(dtype=tf.float32, shape=[],
+                                                name=&#39;l2_regularization_rate&#39;)  
+
+        with tf.name_scope(&#39;decoder&#39;):
+
+
+            pool3_out_scaled = tf.multiply(self.pool3_out, 0.0001, name=&#39;pool3_out_scaled&#39;)
+
+            pool3_1x1 = tf.layers.conv2d(inputs=pool3_out_scaled,
+                                         filters=self.num_classes,
+                                         kernel_size=(1, 1),
+                                         strides=(1, 1),
+                                         padding=&#39;same&#39;,
+                                         kernel_initializer=tf.truncated_normal_initializer(stddev=stddev_1x1),
+                                         kernel_regularizer=tf.contrib.layers.l2_regularizer(l2_regularization_rate),
+                                         name=&#39;pool3_1x1&#39;)
+
+            pool4_out_scaled = tf.multiply(self.pool4_out, 0.01, name=&#39;pool4_out_scaled&#39;)
+
+            pool4_1x1 = tf.layers.conv2d(inputs=pool4_out_scaled,
+                                         filters=self.num_classes,
+                                         kernel_size=(1, 1),
+                                         strides=(1, 1),
+                                         padding=&#39;same&#39;,
+                                         kernel_initializer=tf.truncated_normal_initializer(stddev=stddev_1x1),
+                                         kernel_regularizer=tf.contrib.layers.l2_regularizer(l2_regularization_rate),
+                                         name=&#39;pool4_1x1&#39;)
+
+            fc7_1x1 = tf.layers.conv2d(inputs=self.fc7_out,
+                                       filters=self.num_classes,
+                                       kernel_size=(1, 1),
+                                       strides=(1, 1),
+                                       padding=&#39;same&#39;,
+                                       kernel_initializer=tf.truncated_normal_initializer(stddev=stddev_1x1),
+                                       kernel_regularizer=tf.contrib.layers.l2_regularizer(l2_regularization_rate),
+                                       name=&#39;fc7_1x1&#39;)
+
+
+            fc7_conv2d_trans = tf.layers.conv2d_transpose(inputs=fc7_1x1,
+                                                          filters=self.num_classes,
+                                                          kernel_size=(4, 4),
+                                                          strides=(2, 2),
+                                                          padding=&#39;same&#39;,
+                                                          kernel_initializer=tf.truncated_normal_initializer(
+                                                              stddev=stddev_conv2d_trans),
+                                                          kernel_regularizer=tf.contrib.layers.l2_regularizer(
+                                                              l2_regularization_rate),
+                                                          name=&#39;fc7_conv2d_trans&#39;)
+
+            add_fc7_pool4 = tf.add(fc7_conv2d_trans, pool4_1x1, name=&#39;add_fc7_pool4&#39;)
+
+            fc7_pool4_conv2d_trans = tf.layers.conv2d_transpose(inputs=add_fc7_pool4,
+                                                                filters=self.num_classes,
+                                                                kernel_size=(4, 4),
+                                                                strides=(2, 2),
+                                                                padding=&#39;same&#39;,
+                                                                kernel_initializer=tf.truncated_normal_initializer(
+                                                                    stddev=stddev_conv2d_trans),
+                                                                kernel_regularizer=tf.contrib.layers.l2_regularizer(
+                                                                    l2_regularization_rate),
+                                                                name=&#39;fc7_pool4_conv2d_trans&#39;)
+
+            add_fc7_pool4_pool3 = tf.add(fc7_pool4_conv2d_trans, pool3_1x1, name=&#39;add_fc7_pool4_pool3&#39;)
+
+            fc7_pool4_pool3_conv2d_trans = tf.layers.conv2d_transpose(inputs=add_fc7_pool4_pool3,
+                                                                      filters=self.num_classes,
+                                                                      kernel_size=(16, 16),
+                                                                      strides=(8, 8),
+                                                                      padding=&#39;same&#39;,
+                                                                      kernel_initializer=tf.truncated_normal_initializer(
+                                                                          stddev=stddev_conv2d_trans),
+                                                                      kernel_regularizer=tf.contrib.layers.l2_regularizer(
+                                                                          l2_regularization_rate),
+                                                                      name=&#39;fc7_pool4_pool3_conv2d_trans&#39;)
+
+            fcn8s_output = tf.identity(fc7_pool4_pool3_conv2d_trans, name=&#39;fcn8s_output&#39;)
+
+        return fc7_pool4_pool3_conv2d_trans, l2_regularization_rate
+
+    def _build_optimizer(self):
+
+
+        with tf.name_scope(&#39;optimizer&#39;):
+
+            global_step = tf.Variable(0, trainable=False, name=&#39;global_step&#39;)
+
+            learning_rate = tf.placeholder(dtype=tf.float32, shape=[], name=&#39;learning_rate&#39;)
+
+            regularization_losses = tf.get_collection(
+                tf.GraphKeys.REGULARIZATION_LOSSES)  
+            regularization_loss = tf.add_n(regularization_losses, name=&#39;regularization_loss&#39;) 
+
+            approximation_loss = tf.reduce_mean(
+                tf.nn.softmax_cross_entropy_with_logits(labels=self.labels, logits=self.fcn8s_output),
+                name=&#39;approximation_loss&#39;)
+            total_loss = tf.add(approximation_loss, regularization_loss, name=&#39;total_loss&#39;)
+
+            optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate, name=&#39;adam_optimizer&#39;)
+            train_op = optimizer.minimize(total_loss, global_step=global_step, name=&#39;train_op&#39;)
+
+        return total_loss, train_op, learning_rate, global_step
+
+    def _build_predictor(self):
+
+
+        with tf.name_scope(&#39;predictor&#39;):
+            softmax_output = tf.nn.softmax(self.fcn8s_output, name=&#39;softmax_output&#39;)
+            predictions_argmax = tf.argmax(softmax_output, axis=-1, name=&#39;predictions_argmax&#39;, output_type=tf.int64)
+
+        return softmax_output, predictions_argmax
+
+    def _build_metrics(self):
+
+
+        with tf.variable_scope(&#39;metrics&#39;) as scope:
+            labels_argmax = tf.argmax(self.labels, axis=-1, name=&#39;labels_argmax&#39;, output_type=tf.int64)
+
+
+            mean_loss_value, mean_loss_update_op = tf.metrics.mean(self.total_loss)
+
+            mean_loss_value = tf.identity(mean_loss_value, name=&#39;mean_loss_value&#39;)
+            mean_loss_update_op = tf.identity(mean_loss_update_op, name=&#39;mean_loss_update_op&#39;)
+
+
+            mean_iou_value, mean_iou_update_op = tf.metrics.mean_iou(labels=labels_argmax,
+                                                                     predictions=self.predictions_argmax,
+                                                                     num_classes=self.num_classes)
+
+            mean_iou_value = tf.identity(mean_iou_value, name=&#39;mean_iou_value&#39;)
+            mean_iou_update_op = tf.identity(mean_iou_update_op, name=&#39;mean_iou_update_op&#39;)
+
+
+            acc_value, acc_update_op = tf.metrics.accuracy(labels=labels_argmax,
+                                                           predictions=self.predictions_argmax)
+
+            acc_value = tf.identity(acc_value, name=&#39;acc_value&#39;)
+            acc_update_op = tf.identity(acc_update_op, name=&#39;acc_update_op&#39;)
+
+            local_metric_vars = tf.contrib.framework.get_variables(scope=scope, collection=tf.GraphKeys.LOCAL_VARIABLES)
+            metrics_reset_op = tf.variables_initializer(var_list=local_metric_vars, name=&#39;metrics_reset_op&#39;)
+
+        return (mean_loss_value,
+                mean_loss_update_op,
+                mean_iou_value,
+                mean_iou_update_op,
+                acc_value,
+                acc_update_op,
+                metrics_reset_op)
+
+    def _build_summary_ops(self):
+        graph = tf.get_default_graph()
+
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;pool3_1x1/kernel:0&#39;), scope=&#39;pool3_1x1/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;pool3_1x1/bias:0&#39;), scope=&#39;pool3_1x1/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;pool4_1x1/kernel:0&#39;), scope=&#39;pool4_1x1/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;pool4_1x1/bias:0&#39;), scope=&#39;pool4_1x1/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_1x1/kernel:0&#39;), scope=&#39;fc7_1x1/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_1x1/bias:0&#39;), scope=&#39;fc7_1x1/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_conv2d_trans/kernel:0&#39;),
+                               scope=&#39;fc7_conv2d_trans/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_conv2d_trans/bias:0&#39;),
+                               scope=&#39;fc7_conv2d_trans/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_pool4_conv2d_trans/kernel:0&#39;),
+                               scope=&#39;fc7_pool4_conv2d_trans/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_pool4_conv2d_trans/bias:0&#39;),
+                               scope=&#39;fc7_pool4_conv2d_trans/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_pool4_pool3_conv2d_trans/kernel:0&#39;),
+                               scope=&#39;fc7_pool4_pool3_conv2d_trans/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7_pool4_pool3_conv2d_trans/bias:0&#39;),
+                               scope=&#39;fc7_pool4_pool3_conv2d_trans/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7/weights:0&#39;), scope=&#39;fc7/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc7/biases:0&#39;), scope=&#39;fc7/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc6/weights:0&#39;), scope=&#39;fc6/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;fc6/biases:0&#39;), scope=&#39;fc6/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;conv4_3/filter:0&#39;), scope=&#39;conv4_3/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;conv4_3/biases:0&#39;), scope=&#39;conv4_3/bias&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;conv3_3/filter:0&#39;), scope=&#39;conv3_3/kernel&#39;)
+        add_variable_summaries(variable=graph.get_tensor_by_name(&#39;conv3_3/biases:0&#39;), scope=&#39;conv3_3/bias&#39;)
+
+        tf.summary.scalar(&#39;total_loss&#39;, self.total_loss)
+        tf.summary.scalar(&#39;learning_rate&#39;, self.learning_rate)
+
+        summaries_training = tf.summary.merge_all()
+        summaries_training = tf.identity(summaries_training, name=&#39;summaries_training&#39;)
+
+        mean_loss = tf.summary.scalar(&#39;mean_loss&#39;, self.mean_loss_value)
+        mean_iou = tf.summary.scalar(&#39;mean_iou&#39;, self.mean_iou_value)
+        accuracy = tf.summary.scalar(&#39;accuracy&#39;, self.acc_value)
+
+        summaries_evaluation = tf.summary.merge(inputs=[mean_loss,
+                                                        mean_iou,
+                                                        accuracy])
+        summaries_evaluation = tf.identity(summaries_evaluation, name=&#39;summaries_evaluation&#39;)
+
+        return summaries_training, summaries_evaluation
+
+    def _initialize_metrics(self, metrics):
+
+        self.metric_names = []
+        self.best_metric_values = []
+        self.metric_update_ops = []
+        self.metric_value_tensors = []
+
+        if &#39;loss&#39; in metrics:
+            self.metric_names.append(&#39;loss&#39;)
+            self.best_metric_values.append(99999999.9)
+            self.metric_update_ops.append(self.mean_loss_update_op)
+            self.metric_value_tensors.append(self.mean_loss_value)
+        if &#39;mean_iou&#39; in metrics:
+            self.metric_names.append(&#39;mean_iou&#39;)
+            self.best_metric_values.append(0.0)
+            self.metric_update_ops.append(self.mean_iou_update_op)
+            self.metric_value_tensors.append(self.mean_iou_value)
+        if &#39;accuracy&#39; in metrics:
+            self.metric_names.append(&#39;accuracy&#39;)
+            self.best_metric_values.append(0.0)
+            self.metric_update_ops.append(self.acc_update_op)
+            self.metric_value_tensors.append(self.acc_value)
+
+    def train(self,
+              train_generator,
+              epochs,
+              steps_per_epoch,
+              learning_rate_schedule,
+              keep_prob=0.5,
+              l2_regularization=0.0,
+              eval_dataset=&#39;train&#39;,
+              eval_frequency=5,
+              val_generator=None,
+              val_steps=None,
+              metrics={},
+              save_during_training=False,
+              save_dir=None,
+              save_best_only=True,
+              save_tags=[&#39;default&#39;],
+              save_name=&#39;&#39;,
+              save_frequency=5,
+              saver=&#39;saved_model&#39;,
+              monitor=&#39;loss&#39;,
+              record_summaries=True,
+              summaries_frequency=10,
+              summaries_dir=None,
+              summaries_name=None,
+              training_loss_display_averaging=3):
+     
+        if not tf.test.gpu_device_name():
+            warnings.warn(&#39;Aucun GPU trouvé. Veuillez noter que l\&#39;entraînement de ce réseau sera insupportablement lent sans GPU.&#39;)
+        else:
+            print(&#39;Périphérique GPU par défaut : {}&#39;.format(tf.test.gpu_device_name()))
+
+        if not eval_dataset in [&#39;train&#39;, &#39;val&#39;]:
+            raise ValueError(&#34;`eval_dataset` doit être l&#39;un de &#39;train&#39; ou &#39;val&#39;, mais est &#39;{}&#39;.&#34;.format(eval_dataset))
+
+        if (eval_dataset == &#39;val&#39;) and ((val_generator is None) or (val_steps is None)):
+            raise ValueError(&#34;Lorsque eval_dataset == &#39;val&#39;, un `val_generator` et `val_steps` doivent être passés.&#34;)
+
+        for metric in metrics:
+            if not metric in [&#39;loss&#39;, &#39;mean_iou&#39;, &#39;accuracy&#39;]:
+                raise ValueError(
+                    &#34;{} n&#39;est pas une métrique valide. Les métriques valides sont [&#39;loss&#39;, mean_iou&#39;, &#39;accuracy&#39;].&#34;.format(metric))
+
+        if (not monitor in metrics) and (not monitor == &#39;loss&#39;):
+            raise ValueError(
+                &#39;Vous essayez de surveiller {}, mais elle n\&#39;est pas dans &#34;metrics&#34; et n\&#39;est donc pas calculée.&#39;.format(
+                    monitor))
+
+        self.eval_dataset = eval_dataset
+
+        self.g_step = self.sess.run(self.global_step)
+        learning_rate = learning_rate_schedule(self.g_step)
+
+        self._initialize_metrics(metrics)
+
+        if record_summaries:
+            training_writer = tf.summary.FileWriter(logdir=os.path.join(summaries_dir, summaries_name),
+                                                    graph=self.sess.graph)
+            if len(metrics) &gt; 0:
+                evaluation_writer = tf.summary.FileWriter(logdir=os.path.join(summaries_dir, summaries_name + &#39;_eval&#39;))
+
+        for epoch in range(1, epochs + 1):
+
+            loss_history = deque(maxlen=training_loss_display_averaging)
+
+            tr = trange(steps_per_epoch, file=sys.stdout)
+            tr.set_description(&#39;Epoch {}/{}&#39;.format(epoch, epochs))
+
+            for train_step in tr:
+
+                batch_images, batch_labels = next(train_generator)
+
+                if record_summaries and (self.g_step % summaries_frequency == 0):
+                    _, current_loss, self.g_step, training_summary = self.sess.run([self.train_op,
+                                                                                    self.total_loss,
+                                                                                    self.global_step,
+                                                                                    self.summaries_training],
+                                                                                   feed_dict={
+                                                                                       self.image_input: batch_images,
+                                                                                       self.labels: batch_labels,
+                                                                                       self.learning_rate: learning_rate,
+                                                                                       self.keep_prob: keep_prob,
+                                                                                       self.l2_regularization_rate: l2_regularization})
+                    training_writer.add_summary(summary=training_summary, global_step=self.g_step)
+                else:
+                    _, current_loss, self.g_step = self.sess.run([self.train_op,
+                                                                  self.total_loss,
+                                                                  self.global_step],
+                                                                 feed_dict={self.image_input: batch_images,
+                                                                            self.labels: batch_labels,
+                                                                            self.learning_rate: learning_rate,
+                                                                            self.keep_prob: keep_prob,
+                                                                            self.l2_regularization_rate: l2_regularization})
+
+                self.variables_updated = True
+
+                loss_history.append(current_loss)
+                losses = np.array(loss_history)
+                self.training_loss = np.mean(losses)
+
+                tr.set_postfix(ordered_dict={&#39;loss&#39;: self.training_loss,
+                                             &#39;learning rate&#39;: learning_rate})
+
+                learning_rate = learning_rate_schedule(self.g_step)
+
+            if (len(metrics) &gt; 0) and (epoch % eval_frequency == 0):
+
+                if eval_dataset == &#39;train&#39;:
+                    data_generator = train_generator
+                    num_batches = steps_per_epoch
+                    description = &#39;Évaluation sur le jeu de données de formation&#39;
+                elif eval_dataset == &#39;val&#39;:
+                    data_generator = val_generator
+                    num_batches = val_steps
+                    description = &#39;Évaluation sur le jeu de données de validation&#39;
+
+                self._evaluate(data_generator=data_generator,
+                               metrics=metrics,
+                               num_batches=num_batches,
+                               l2_regularization=l2_regularization,
+                               description=description)
+
+                if record_summaries:
+                    evaluation_summary = self.sess.run(self.summaries_evaluation)
+                    evaluation_writer.add_summary(summary=evaluation_summary, global_step=self.g_step)
+
+            if save_during_training and (epoch % save_frequency == 0):
+
+                save = False
+                if save_best_only:
+                    if (monitor == &#39;loss&#39; and
+                            (not &#39;loss&#39; in self.metric_names) and
+                            self.training_loss &lt; self.best_training_loss):
+                        save = True
+                    else:
+                        i = self.metric_names.index(monitor)
+                        if (monitor == &#39;loss&#39;) and (self.metric_values[i] &lt; self.best_metric_values[i]):
+                            save = True
+                        elif (monitor in [&#39;accuracry&#39;, &#39;mean_iou&#39;]) and (
+                                self.metric_values[i] &gt; self.best_metric_values[i]):
+                            save = True
+                    if save:
+                        print(&#39;Nouvelle meilleure {} valeur, modèle de sauvegarde.&#39;.format(monitor))
+                    else:
+                        print(&#39;Pas d\&#39;amélioration par rapport à la meilleure valeur {} précédente, pas de sauvegarde du modèle.&#39;.format(monitor))
+                else:
+                    save = True
+
+                if save:
+                    self.save(model_save_dir=save_dir,
+                              saver=saver,
+                              tags=save_tags,
+                              name=save_name,
+                              include_global_step=True,
+                              include_last_training_loss=True,
+                              include_metrics=(len(self.metric_names) &gt; 0))
+
+            if self.training_loss &lt; self.best_training_loss:
+                self.best_training_loss = self.training_loss
+
+            if epoch % eval_frequency == 0:
+
+                for i, metric_name in enumerate(self.metric_names):
+                    if (metric_name == &#39;loss&#39;) and (self.metric_values[i] &lt; self.best_metric_values[i]):
+                        self.best_metric_values[i] = self.metric_values[i]
+                    elif (metric_name in [&#39;accuracry&#39;, &#39;mean_iou&#39;]) and (
+                            self.metric_values[i] &gt; self.best_metric_values[i]):
+                        self.best_metric_values[i] = self.metric_values[i]
+
+    def _evaluate(self, data_generator, metrics, num_batches, l2_regularization, description=&#39;Evaluation&#39;):
+
+        self.sess.run(self.metrics_reset_op)
+
+        tr = trange(num_batches, file=sys.stdout)
+        tr.set_description(description)
+
+        for step in tr:
+            batch_images, batch_labels = next(data_generator)
+
+            self.sess.run(self.metric_update_ops,
+                          feed_dict={self.image_input: batch_images,
+                                     self.labels: batch_labels,
+                                     self.keep_prob: 1.0,
+                                     self.l2_regularization_rate: l2_regularization})
+
+        self.metric_values = self.sess.run(self.metric_value_tensors)
+
+        evaluation_results_string = &#39;&#39;
+        for i, metric_name in enumerate(self.metric_names):
+            evaluation_results_string += metric_name + &#39;: {:.4f}  &#39;.format(self.metric_values[i])
+        print(evaluation_results_string)
+
+    def evaluate(self, data_generator, num_batches, metrics={&#39;loss&#39;, &#39;mean_iou&#39;, &#39;accuracy&#39;}, l2_regularization=0.0,
+                 dataset=&#39;val&#39;):
+
+
+        for metric in metrics:
+            if not metric in [&#39;loss&#39;, &#39;mean_iou&#39;, &#39;accuracy&#39;]:
+                raise ValueError(
+                    &#34;{} n&#39;est pas une métrique valide. Les métriques valides sont [&#39;loss&#39;, mean_iou&#39;, &#39;accuracy&#39;].&#34;.format(metric))
+
+        if not dataset in {&#39;train&#39;, &#39;val&#39;}:
+            raise ValueError(&#34;`dataset` doit être soit &#39;train&#39; soit &#39;val&#39;..&#34;)
+
+        self._initialize_metrics(metrics)
+
+        self._evaluate(data_generator, metrics, num_batches, l2_regularization, description=&#39;Evaluation&#39;)
+
+        if dataset == &#39;val&#39;:
+            self.eval_dataset = &#39;val&#39;
+        else:
+            self.eval_dataset = &#39;train&#39;
+
+    def predict(self, images, argmax=True):
+
+        if argmax:
+            return self.sess.run(self.predictions_argmax,
+                                 feed_dict={self.image_input: images,
+                                            self.keep_prob: 1.0})
+        else:
+            return self.sess.run(self.softmax_output,
+                                 feed_dict={self.image_input: images,
+                                            self.keep_prob: 1.0})
+
+    def predict_and_save(self,
+                         results_dir,
+                         images_dir,
+                         color_map,
+                         resize=False,
+                         image_file_extension=&#39;png&#39;,
+                         include_unprocessed_image=False,
+                         arrangement=&#39;vertical&#39;,
+                         overwrite_existing=True):
+
+        if overwrite_existing and os.path.exists(results_dir):
+            shutil.rmtree(results_dir)
+        os.makedirs(results_dir)
+
+        image_paths = glob(os.path.join(images_dir, &#39;*.&#39; + image_file_extension))
+        num_images = len(image_paths)
+
+        print(&#39;Les images segmentées seront enregistrées dans &#34;{}&#34;.&#39;.format(results_dir))
+
+        tr = trange(num_images, file=sys.stdout)
+        tr.set_description(&#39;Traitement des images&#39;)
+
+        for i in tr:
+
+            filepath = image_paths[i]
+
+            image = scipy.misc.imread(filepath)
+            if resize and not np.array_equal(image.shape[:2], resize):
+                image = scipy.misc.imresize(image, resize)
+            img_height, img_width, img_ch = image.shape
+
+            prediction = self.predict([image], argmax=False)
+            processed_image = np.asarray(
+                print_segmentation_onto_image(image=image, prediction=prediction, color_map=color_map), dtype=np.uint8)
+
+            if include_unprocessed_image:
+                if arrangement == &#39;vertical&#39;:
+                    output_width = img_width
+                    output_height = 2 * img_height
+                    processed_image = create_split_view(target_size=(output_height, output_width),
+                                                        images=[processed_image, image],
+                                                        positions=[(0, 0), (img_height, 0)],
+                                                        sizes=[(img_height, img_width), (img_height, img_width)])
+                else:
+                    output_width = 2 * img_width
+                    output_height = img_height
+                    processed_image = create_split_view(target_size=(output_height, output_width),
+                                                        images=[processed_image, image],
+                                                        positions=[(0, 0), (0, img_width)],
+                                                        sizes=[(img_height, img_width), (img_height, img_width)])
+
+            scipy.misc.imsave(os.path.join(results_dir, os.path.basename(filepath)), processed_image)
+
+    def save(self,
+             model_save_dir,
+             saver,
+             tags=[&#39;default&#39;],
+             name=None,
+             include_global_step=True,
+             include_last_training_loss=True,
+             include_metrics=True,
+             force_save=False):
+
+        if (not self.variables_updated) and (not force_save):
+            print(&#34;Abandon : Rien à sauvegarder, aucune formation n&#39;a été effectuée depuis la dernière sauvegarde du modèle.&#34;)
+            return
+
+        if not saver in {&#39;saved_model&#39;, &#39;train_saver&#39;}:
+            raise ValueError(
+                &#34;Valeur inattendue pour `saver` : Peut être soit &#39;saved_model&#39; soit &#39;train_saver&#39;, mais a reçu &#39;{}&#39;.&#34;.format(
+                    saver))
+
+        if self.training_loss is None:
+            include_last_training_loss = False
+
+        model_name = &#39;saved_model&#39;
+        if not name is None:
+            model_name += &#39;_&#39; + name
+        if include_global_step:
+            self.g_step = self.sess.run(self.global_step)
+            model_name += &#39;_(globalstep-{})&#39;.format(self.g_step)
+        if include_last_training_loss:
+            model_name += &#39;_(trainloss-{:.4f})&#39;.format(self.training_loss)
+        if include_metrics:
+            if self.eval_dataset == &#39;val&#39;:
+                model_name += &#39;_(eval_on_val_dataset)&#39;
+            else:
+                model_name += &#39;_(eval_on_train_dataset)&#39;
+            for i in range(len(self.metric_names)):
+                try:
+                    model_name += &#39;_({}-{:.4f})&#39;.format(self.metric_names[i], self.metric_values[i])
+                except IndexError:
+                    model_name += &#39;_{}&#39;.format(time.time())
+        if not (include_global_step or include_last_training_loss or include_metrics) and (name is None):
+            model_name += &#39;_{}&#39;.format(time.time())
+
+        if saver == &#39;saved_model&#39;:
+            saved_model_builder = tf.saved_model.builder.SavedModelBuilder(os.path.join(model_save_dir, model_name))
+            saved_model_builder.add_meta_graph_and_variables(sess=self.sess, tags=tags)
+            saved_model_builder.save()
+        else:
+            saver = tf.train.Saver(var_list=None,
+                                   reshape=False,
+                                   max_to_keep=5,
+                                   keep_checkpoint_every_n_hours=10000.0)
+            saver.save(self.sess,
+                       save_path=os.path.join(model_save_dir, model_name, &#39;variables&#39;),
+                       write_meta_graph=True,
+                       write_state=True)
+
+        self.variables_updated = False
+
+    def load_variables(self, path):
+
+        saver = tf.train.Saver(var_list=None)
+        saver.restore(self.sess, path)
+
+    def close(self):
+
+        self.sess.close()
+        print(&#34;La session a été clôturée.&#34;)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="cityscapes_tensorflow.modelPipeline.close"><code class="name flex">
+<span>def <span class="ident">close</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def close(self):
+
+    self.sess.close()
+    print(&#34;La session a été clôturée.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="cityscapes_tensorflow.modelPipeline.evaluate"><code class="name flex">
+<span>def <span class="ident">evaluate</span></span>(<span>self, data_generator, num_batches, metrics={'accuracy', 'loss', 'mean_iou'}, l2_regularization=0.0, dataset='val')</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def evaluate(self, data_generator, num_batches, metrics={&#39;loss&#39;, &#39;mean_iou&#39;, &#39;accuracy&#39;}, l2_regularization=0.0,
+             dataset=&#39;val&#39;):
+
+
+    for metric in metrics:
+        if not metric in [&#39;loss&#39;, &#39;mean_iou&#39;, &#39;accuracy&#39;]:
+            raise ValueError(
+                &#34;{} n&#39;est pas une métrique valide. Les métriques valides sont [&#39;loss&#39;, mean_iou&#39;, &#39;accuracy&#39;].&#34;.format(metric))
+
+    if not dataset in {&#39;train&#39;, &#39;val&#39;}:
+        raise ValueError(&#34;`dataset` doit être soit &#39;train&#39; soit &#39;val&#39;..&#34;)
+
+    self._initialize_metrics(metrics)
+
+    self._evaluate(data_generator, metrics, num_batches, l2_regularization, description=&#39;Evaluation&#39;)
+
+    if dataset == &#39;val&#39;:
+        self.eval_dataset = &#39;val&#39;
+    else:
+        self.eval_dataset = &#39;train&#39;</code></pre>
+</details>
+</dd>
+<dt id="cityscapes_tensorflow.modelPipeline.load_variables"><code class="name flex">
+<span>def <span class="ident">load_variables</span></span>(<span>self, path)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_variables(self, path):
+
+    saver = tf.train.Saver(var_list=None)
+    saver.restore(self.sess, path)</code></pre>
+</details>
+</dd>
+<dt id="cityscapes_tensorflow.modelPipeline.predict"><code class="name flex">
+<span>def <span class="ident">predict</span></span>(<span>self, images, argmax=True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def predict(self, images, argmax=True):
+
+    if argmax:
+        return self.sess.run(self.predictions_argmax,
+                             feed_dict={self.image_input: images,
+                                        self.keep_prob: 1.0})
+    else:
+        return self.sess.run(self.softmax_output,
+                             feed_dict={self.image_input: images,
+                                        self.keep_prob: 1.0})</code></pre>
+</details>
+</dd>
+<dt id="cityscapes_tensorflow.modelPipeline.predict_and_save"><code class="name flex">
+<span>def <span class="ident">predict_and_save</span></span>(<span>self, results_dir, images_dir, color_map, resize=False, image_file_extension='png', include_unprocessed_image=False, arrangement='vertical', overwrite_existing=True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def predict_and_save(self,
+                     results_dir,
+                     images_dir,
+                     color_map,
+                     resize=False,
+                     image_file_extension=&#39;png&#39;,
+                     include_unprocessed_image=False,
+                     arrangement=&#39;vertical&#39;,
+                     overwrite_existing=True):
+
+    if overwrite_existing and os.path.exists(results_dir):
+        shutil.rmtree(results_dir)
+    os.makedirs(results_dir)
+
+    image_paths = glob(os.path.join(images_dir, &#39;*.&#39; + image_file_extension))
+    num_images = len(image_paths)
+
+    print(&#39;Les images segmentées seront enregistrées dans &#34;{}&#34;.&#39;.format(results_dir))
+
+    tr = trange(num_images, file=sys.stdout)
+    tr.set_description(&#39;Traitement des images&#39;)
+
+    for i in tr:
+
+        filepath = image_paths[i]
+
+        image = scipy.misc.imread(filepath)
+        if resize and not np.array_equal(image.shape[:2], resize):
+            image = scipy.misc.imresize(image, resize)
+        img_height, img_width, img_ch = image.shape
+
+        prediction = self.predict([image], argmax=False)
+        processed_image = np.asarray(
+            print_segmentation_onto_image(image=image, prediction=prediction, color_map=color_map), dtype=np.uint8)
+
+        if include_unprocessed_image:
+            if arrangement == &#39;vertical&#39;:
+                output_width = img_width
+                output_height = 2 * img_height
+                processed_image = create_split_view(target_size=(output_height, output_width),
+                                                    images=[processed_image, image],
+                                                    positions=[(0, 0), (img_height, 0)],
+                                                    sizes=[(img_height, img_width), (img_height, img_width)])
+            else:
+                output_width = 2 * img_width
+                output_height = img_height
+                processed_image = create_split_view(target_size=(output_height, output_width),
+                                                    images=[processed_image, image],
+                                                    positions=[(0, 0), (0, img_width)],
+                                                    sizes=[(img_height, img_width), (img_height, img_width)])
+
+        scipy.misc.imsave(os.path.join(results_dir, os.path.basename(filepath)), processed_image)</code></pre>
+</details>
+</dd>
+<dt id="cityscapes_tensorflow.modelPipeline.save"><code class="name flex">
+<span>def <span class="ident">save</span></span>(<span>self, model_save_dir, saver, tags=['default'], name=None, include_global_step=True, include_last_training_loss=True, include_metrics=True, force_save=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save(self,
+         model_save_dir,
+         saver,
+         tags=[&#39;default&#39;],
+         name=None,
+         include_global_step=True,
+         include_last_training_loss=True,
+         include_metrics=True,
+         force_save=False):
+
+    if (not self.variables_updated) and (not force_save):
+        print(&#34;Abandon : Rien à sauvegarder, aucune formation n&#39;a été effectuée depuis la dernière sauvegarde du modèle.&#34;)
+        return
+
+    if not saver in {&#39;saved_model&#39;, &#39;train_saver&#39;}:
+        raise ValueError(
+            &#34;Valeur inattendue pour `saver` : Peut être soit &#39;saved_model&#39; soit &#39;train_saver&#39;, mais a reçu &#39;{}&#39;.&#34;.format(
+                saver))
+
+    if self.training_loss is None:
+        include_last_training_loss = False
+
+    model_name = &#39;saved_model&#39;
+    if not name is None:
+        model_name += &#39;_&#39; + name
+    if include_global_step:
+        self.g_step = self.sess.run(self.global_step)
+        model_name += &#39;_(globalstep-{})&#39;.format(self.g_step)
+    if include_last_training_loss:
+        model_name += &#39;_(trainloss-{:.4f})&#39;.format(self.training_loss)
+    if include_metrics:
+        if self.eval_dataset == &#39;val&#39;:
+            model_name += &#39;_(eval_on_val_dataset)&#39;
+        else:
+            model_name += &#39;_(eval_on_train_dataset)&#39;
+        for i in range(len(self.metric_names)):
+            try:
+                model_name += &#39;_({}-{:.4f})&#39;.format(self.metric_names[i], self.metric_values[i])
+            except IndexError:
+                model_name += &#39;_{}&#39;.format(time.time())
+    if not (include_global_step or include_last_training_loss or include_metrics) and (name is None):
+        model_name += &#39;_{}&#39;.format(time.time())
+
+    if saver == &#39;saved_model&#39;:
+        saved_model_builder = tf.saved_model.builder.SavedModelBuilder(os.path.join(model_save_dir, model_name))
+        saved_model_builder.add_meta_graph_and_variables(sess=self.sess, tags=tags)
+        saved_model_builder.save()
+    else:
+        saver = tf.train.Saver(var_list=None,
+                               reshape=False,
+                               max_to_keep=5,
+                               keep_checkpoint_every_n_hours=10000.0)
+        saver.save(self.sess,
+                   save_path=os.path.join(model_save_dir, model_name, &#39;variables&#39;),
+                   write_meta_graph=True,
+                   write_state=True)
+
+    self.variables_updated = False</code></pre>
+</details>
+</dd>
+<dt id="cityscapes_tensorflow.modelPipeline.train"><code class="name flex">
+<span>def <span class="ident">train</span></span>(<span>self, train_generator, epochs, steps_per_epoch, learning_rate_schedule, keep_prob=0.5, l2_regularization=0.0, eval_dataset='train', eval_frequency=5, val_generator=None, val_steps=None, metrics={}, save_during_training=False, save_dir=None, save_best_only=True, save_tags=['default'], save_name='', save_frequency=5, saver='saved_model', monitor='loss', record_summaries=True, summaries_frequency=10, summaries_dir=None, summaries_name=None, training_loss_display_averaging=3)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def train(self,
+          train_generator,
+          epochs,
+          steps_per_epoch,
+          learning_rate_schedule,
+          keep_prob=0.5,
+          l2_regularization=0.0,
+          eval_dataset=&#39;train&#39;,
+          eval_frequency=5,
+          val_generator=None,
+          val_steps=None,
+          metrics={},
+          save_during_training=False,
+          save_dir=None,
+          save_best_only=True,
+          save_tags=[&#39;default&#39;],
+          save_name=&#39;&#39;,
+          save_frequency=5,
+          saver=&#39;saved_model&#39;,
+          monitor=&#39;loss&#39;,
+          record_summaries=True,
+          summaries_frequency=10,
+          summaries_dir=None,
+          summaries_name=None,
+          training_loss_display_averaging=3):
+ 
+    if not tf.test.gpu_device_name():
+        warnings.warn(&#39;Aucun GPU trouvé. Veuillez noter que l\&#39;entraînement de ce réseau sera insupportablement lent sans GPU.&#39;)
+    else:
+        print(&#39;Périphérique GPU par défaut : {}&#39;.format(tf.test.gpu_device_name()))
+
+    if not eval_dataset in [&#39;train&#39;, &#39;val&#39;]:
+        raise ValueError(&#34;`eval_dataset` doit être l&#39;un de &#39;train&#39; ou &#39;val&#39;, mais est &#39;{}&#39;.&#34;.format(eval_dataset))
+
+    if (eval_dataset == &#39;val&#39;) and ((val_generator is None) or (val_steps is None)):
+        raise ValueError(&#34;Lorsque eval_dataset == &#39;val&#39;, un `val_generator` et `val_steps` doivent être passés.&#34;)
+
+    for metric in metrics:
+        if not metric in [&#39;loss&#39;, &#39;mean_iou&#39;, &#39;accuracy&#39;]:
+            raise ValueError(
+                &#34;{} n&#39;est pas une métrique valide. Les métriques valides sont [&#39;loss&#39;, mean_iou&#39;, &#39;accuracy&#39;].&#34;.format(metric))
+
+    if (not monitor in metrics) and (not monitor == &#39;loss&#39;):
+        raise ValueError(
+            &#39;Vous essayez de surveiller {}, mais elle n\&#39;est pas dans &#34;metrics&#34; et n\&#39;est donc pas calculée.&#39;.format(
+                monitor))
+
+    self.eval_dataset = eval_dataset
+
+    self.g_step = self.sess.run(self.global_step)
+    learning_rate = learning_rate_schedule(self.g_step)
+
+    self._initialize_metrics(metrics)
+
+    if record_summaries:
+        training_writer = tf.summary.FileWriter(logdir=os.path.join(summaries_dir, summaries_name),
+                                                graph=self.sess.graph)
+        if len(metrics) &gt; 0:
+            evaluation_writer = tf.summary.FileWriter(logdir=os.path.join(summaries_dir, summaries_name + &#39;_eval&#39;))
+
+    for epoch in range(1, epochs + 1):
+
+        loss_history = deque(maxlen=training_loss_display_averaging)
+
+        tr = trange(steps_per_epoch, file=sys.stdout)
+        tr.set_description(&#39;Epoch {}/{}&#39;.format(epoch, epochs))
+
+        for train_step in tr:
+
+            batch_images, batch_labels = next(train_generator)
+
+            if record_summaries and (self.g_step % summaries_frequency == 0):
+                _, current_loss, self.g_step, training_summary = self.sess.run([self.train_op,
+                                                                                self.total_loss,
+                                                                                self.global_step,
+                                                                                self.summaries_training],
+                                                                               feed_dict={
+                                                                                   self.image_input: batch_images,
+                                                                                   self.labels: batch_labels,
+                                                                                   self.learning_rate: learning_rate,
+                                                                                   self.keep_prob: keep_prob,
+                                                                                   self.l2_regularization_rate: l2_regularization})
+                training_writer.add_summary(summary=training_summary, global_step=self.g_step)
+            else:
+                _, current_loss, self.g_step = self.sess.run([self.train_op,
+                                                              self.total_loss,
+                                                              self.global_step],
+                                                             feed_dict={self.image_input: batch_images,
+                                                                        self.labels: batch_labels,
+                                                                        self.learning_rate: learning_rate,
+                                                                        self.keep_prob: keep_prob,
+                                                                        self.l2_regularization_rate: l2_regularization})
+
+            self.variables_updated = True
+
+            loss_history.append(current_loss)
+            losses = np.array(loss_history)
+            self.training_loss = np.mean(losses)
+
+            tr.set_postfix(ordered_dict={&#39;loss&#39;: self.training_loss,
+                                         &#39;learning rate&#39;: learning_rate})
+
+            learning_rate = learning_rate_schedule(self.g_step)
+
+        if (len(metrics) &gt; 0) and (epoch % eval_frequency == 0):
+
+            if eval_dataset == &#39;train&#39;:
+                data_generator = train_generator
+                num_batches = steps_per_epoch
+                description = &#39;Évaluation sur le jeu de données de formation&#39;
+            elif eval_dataset == &#39;val&#39;:
+                data_generator = val_generator
+                num_batches = val_steps
+                description = &#39;Évaluation sur le jeu de données de validation&#39;
+
+            self._evaluate(data_generator=data_generator,
+                           metrics=metrics,
+                           num_batches=num_batches,
+                           l2_regularization=l2_regularization,
+                           description=description)
+
+            if record_summaries:
+                evaluation_summary = self.sess.run(self.summaries_evaluation)
+                evaluation_writer.add_summary(summary=evaluation_summary, global_step=self.g_step)
+
+        if save_during_training and (epoch % save_frequency == 0):
+
+            save = False
+            if save_best_only:
+                if (monitor == &#39;loss&#39; and
+                        (not &#39;loss&#39; in self.metric_names) and
+                        self.training_loss &lt; self.best_training_loss):
+                    save = True
+                else:
+                    i = self.metric_names.index(monitor)
+                    if (monitor == &#39;loss&#39;) and (self.metric_values[i] &lt; self.best_metric_values[i]):
+                        save = True
+                    elif (monitor in [&#39;accuracry&#39;, &#39;mean_iou&#39;]) and (
+                            self.metric_values[i] &gt; self.best_metric_values[i]):
+                        save = True
+                if save:
+                    print(&#39;Nouvelle meilleure {} valeur, modèle de sauvegarde.&#39;.format(monitor))
+                else:
+                    print(&#39;Pas d\&#39;amélioration par rapport à la meilleure valeur {} précédente, pas de sauvegarde du modèle.&#39;.format(monitor))
+            else:
+                save = True
+
+            if save:
+                self.save(model_save_dir=save_dir,
+                          saver=saver,
+                          tags=save_tags,
+                          name=save_name,
+                          include_global_step=True,
+                          include_last_training_loss=True,
+                          include_metrics=(len(self.metric_names) &gt; 0))
+
+        if self.training_loss &lt; self.best_training_loss:
+            self.best_training_loss = self.training_loss
+
+        if epoch % eval_frequency == 0:
+
+            for i, metric_name in enumerate(self.metric_names):
+                if (metric_name == &#39;loss&#39;) and (self.metric_values[i] &lt; self.best_metric_values[i]):
+                    self.best_metric_values[i] = self.metric_values[i]
+                elif (metric_name in [&#39;accuracry&#39;, &#39;mean_iou&#39;]) and (
+                        self.metric_values[i] &gt; self.best_metric_values[i]):
+                    self.best_metric_values[i] = self.metric_values[i]</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="cityscapes_tensorflow.modelPipeline" href="#cityscapes_tensorflow.modelPipeline">modelPipeline</a></code></h4>
+<ul class="two-column">
+<li><code><a title="cityscapes_tensorflow.modelPipeline.close" href="#cityscapes_tensorflow.modelPipeline.close">close</a></code></li>
+<li><code><a title="cityscapes_tensorflow.modelPipeline.evaluate" href="#cityscapes_tensorflow.modelPipeline.evaluate">evaluate</a></code></li>
+<li><code><a title="cityscapes_tensorflow.modelPipeline.load_variables" href="#cityscapes_tensorflow.modelPipeline.load_variables">load_variables</a></code></li>
+<li><code><a title="cityscapes_tensorflow.modelPipeline.predict" href="#cityscapes_tensorflow.modelPipeline.predict">predict</a></code></li>
+<li><code><a title="cityscapes_tensorflow.modelPipeline.predict_and_save" href="#cityscapes_tensorflow.modelPipeline.predict_and_save">predict_and_save</a></code></li>
+<li><code><a title="cityscapes_tensorflow.modelPipeline.save" href="#cityscapes_tensorflow.modelPipeline.save">save</a></code></li>
+<li><code><a title="cityscapes_tensorflow.modelPipeline.train" href="#cityscapes_tensorflow.modelPipeline.train">train</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Python</ID>
+  <OriginalElement>#D:/OC/Abdess/P8/cityscapes_tensorflow.py</OriginalElement>
+  <nodes>
+    <node x="-624.5774808032756" y="6.4184707508061365">cityscapes_tensorflow.modelPipeline</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="0.5933315113418967" showDependencies="false" x="1194.5" y="639.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+</Diagram>
+
