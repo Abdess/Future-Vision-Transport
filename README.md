@@ -28,7 +28,7 @@ Ce projet est constitué de 3 sous projets.
 
 <img src="data/UML/draft_batchdatagenaug.jpg" width="500">
 
-Le projet cityscapesScripts [cityscapesScripts](https://github.com/mcordts/cityscapesScripts) a été forké pour y ajouter la [segmentation par catégories](https://github.com/Abdess/cityscapesScripts/blob/master/cityscapesscripts/helpers/labels_bdga.py), [l’augmentation des données et un générateur de données](https://github.com/Abdess/cityscapesScripts/blob/master/cityscapesscripts/preparation/batchdatagenaug.py).
+Le projet [cityscapesScripts](https://github.com/mcordts/cityscapesScripts) a été forké pour y ajouter la [segmentation par catégories](https://github.com/Abdess/cityscapesScripts/blob/master/cityscapesscripts/helpers/labels_bdga.py), [l’augmentation des données et un générateur de données](https://github.com/Abdess/cityscapesScripts/blob/master/cityscapesscripts/preparation/batchdatagenaug.py).
 
 ### Modélisation
 
