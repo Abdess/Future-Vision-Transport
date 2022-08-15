@@ -1,14 +1,16 @@
-train_images = 'data/datasets/cityscapes/leftImg8bit/train/'
-val_images = 'data/datasets/cityscapes/leftImg8bit/val/'
-test_images = 'data/datasets/cityscapes/leftImg8bit/test/'
+pays_propose = input("Choisis un pays parmis les suivants et je te donne sa\
+capitale : France, Espagne, Portugal, Bresil et Suede : ")
 
-train_gt = 'data/datasets/cityscapes/gtFine/train/'
-val_gt = 'data/datasets/cityscapes/gtFine/val/'
+liste_pays = ["France", "Espagne", "Portugal", "Bresil", "Suede"]
+liste_capitales = ["Paris", "Madrid", "Lisbonne", "Brasilia", "Stockholm"]
 
-vgg_pretrained = 'data/models/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5'
 
-# Hyper Paramètres
-num_classes = 8
-train_batch_size = 1
-val_batch_size = 1
-epochs = 1
+def nom_capitale(nom_pays):
+    for pays in liste_pays:
+        if nom_pays == pays:
+            return liste_capitales[liste_pays.index(pays)]
+        else:
+            return f"La capitale de {nom_pays} est introuvable :'("
+
+
+print(nom_capitale(pays_propose))
